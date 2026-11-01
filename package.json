@@ -1,0 +1,34 @@
+{
+  "name": "etchsky",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "sky:fetch": "node scripts/fetch-sky-sources.mjs",
+    "sky:build": "node scripts/build-sky-data.mjs .cache/hyg/hygdata_v41.csv .cache/celestial/constellations.json .cache/celestial/constellations.lines.json",
+    "sky:data": "npm run sky:fetch && npm run sky:build",
+    "typecheck": "tsc --noEmit",
+    "predev": "node scripts/ensure-sky-data.mjs",
+    "prebuild": "node scripts/ensure-sky-data.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/fraunces": "^5.3.0",
+    "@fontsource-variable/instrument-sans": "^5.3.0",
+    "@types/three": "^0.187.0",
+    "next": "16.4.3",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.3",
+    "typescript": "^5"
+  }
+}
